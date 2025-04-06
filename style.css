@@ -1,0 +1,163 @@
+/* Reset some default styling for body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-image: url('img/img.jpg'); /* Path to your img.jpg file */
+    background-size: cover; /* Ensures the background always covers the entire page */
+    background-position: center center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    height: auto; /* Allows the body height to adjust based on content */
+    min-height: 100vh; /* Ensures the body takes the full height of the viewport */
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: flex-start; /* Align content to the top */
+    text-align: center; /* Center text in the body */
+}
+
+/* Container for the content */
+.content {
+    max-width: 600px; /* Set max-width to keep content from stretching too far */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Slight transparent black background for readability */
+    border-radius: 10px;
+    text-align: center;
+    overflow: auto; /* Allows scrolling if the content overflows */
+    height: auto; /* Allow the content to grow naturally */
+}
+
+/* Styling for the poem text (pre tag) */
+pre {
+    font-size: 12px; /* Set text size to 12px */
+    white-space: pre-wrap; /* Ensures the text wraps properly */
+    word-wrap: break-word; /* Allows long words to break */
+    text-align: left; /* Align the text to the left for readability */
+    line-height: 1.6; /* Increases line height for better readability */
+    margin-left: 10px; /* Move text slightly to the left */
+    margin-bottom: 20px; /* Adds space below the text */
+}
+
+/* Button styling */
+button {
+    background-color: white;
+    border-radius: 5px;
+    color: cyan;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Adds space above the button */
+}
+
+/* Styling for images */
+img {
+    max-width: 100%; /* Ensure the image is responsive and fits within its container */
+    height: auto;
+    margin-bottom: 20px; /* Adds space below the image */
+}
+
+
+
+
+
+
+/* Reset body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;  /* Fallback color for mobile if no video */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for all videos */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row for PC */
+    grid-gap: 20px;  /* Space between videos */
+    padding: 20px;
+    justify-items: center;
+    max-width: 100%;
+    height: 100vh; /* Ensure it fits in the viewport */
+    overflow: hidden; /* Prevent scrolling */
+    box-sizing: border-box;
+}
+
+/* Each video item inside a black border with rounded corners */
+.video-item {
+    border: 2px solid black;  /* Thin black border around the video */
+    padding: 5px;  /* Padding inside the border */
+    background-color: #000;  /* Black background inside the border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;  /* Ensure full height */
+    border-radius: 15px;  /* Rounded corners for the video container */
+    overflow: hidden;  /* Ensures the video fits inside the rounded corners */
+    box-sizing: border-box;
+}
+
+/* Style for the video itself (portrait orientation) */
+video {
+    width: 100%;  /* Make video width 100% of the container */
+    height: 100%; /* Make video height 100% of the container */
+    object-fit: cover;  /* Ensure the video covers the container without distortion */
+    border-radius: 15px;  /* Apply rounded corners to the video itself */
+}
+
+/* The content with the paragraph (poem) on top of the videos */
+.content {
+    position: absolute;
+    z-index: 1; /* Ensures content is above the video */
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    top: 30%;  /* Adjust the position of the text */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+
+
+/* Style for the paragraph */
+
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background to make text stand out */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .content p {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    /* Keep video layout responsive */
+    .video-container {
+        grid-template-columns: repeat(3, 1fr); /* 2 columns on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .content p {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+
+    /* Keep video layout responsive */
+    .video-container {
+        grid-template-columns: repeat(3, 1fr); /* 1 column on very small screens */
+    }
+}
